@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/styles.css">
+    <title>Document</title>
+</head>
+
+<body style="background: #e9ebee">
+    <!--    dark bg-dark 
+-->
+    <nav class="navbar navbar">
+        <div class="container-xl">
+
+            <a href="/" class="nav-bar-brand">
+                <img width="60px" height="60px" src="../public/img/logo.jpg" alt="">
+            </a>
+
+            <input class="busquedad form-control form-control-sm" type="text" placeholder="search">
+
+        </div>
+    </nav>
+
+    <div class="container-xl">
+        <div class="contenedorPadre">
+
+            <div class="publication">
+                <!--Perfil de usuario-->
+                <div class="profile">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div id="border" class="row no-gutters">
+                            <div class=" border col-md-2">
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <i class="far fa-user"></i>
+
+                                    <p class="card-text">
+                                        <small class="text-muted">Last updated 3 mins agos</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="contenedor-color" id="abc">
+                        <div id="color" class="color-1"></div>
+                        <div id="color1" class="color-2"></div>
+                        <div id="color2" class="color-3"></div>
+                    </div>
+                </div>
+                {{{body}}}
+
+    <!--en las vistas index y image a un div al ultimo por demas es porque se separa en dos entonces
+    el ultimo div es para cerrar los que son publicaciones de las imagenes vale :V-->
+
+                    <div class="stack">
+
+        <div id="border-stats" class="card border-stats mb-3" style="max-width: 18rem;">
+            <div  class="border-cabecera card-header ">Stats</div>
+            <div class="card-body text-dark">
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item h6">
+                        <small>imagenes</small>
+
+                    </li>
+                    <li class="list-group-item h6">
+                        <small>comentarios</small>
+                    </li>
+                    <li class="list-group-item h6">
+                        <small>vistas</small>
+                    </li>
+                    <li class="list-group-item h6">
+                        <small>likes</small>
+                    </li>
+                    <li class="list-group-item h6">
+                        <small>dislikes</small>
+                    </li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="card border-stats  mb-3" style="max-width: 18rem;">
+            <div class="card-header">Mas populares</div>
+            <div class="most-popular">
+                <div class="b">Item 2</div>
+                <div class="c">Item 3</div>
+                <div class="d">Item 4</div>
+                <div class="e">Item 4</div>
+            </div>
+        </div>
+
+
+        <div class="card border-stats mb-3" style="max-width: 18rem;">
+            <div class="card-header">ultimos comentarios</div>
+            <div class="card-body text-dark">
+                <i class="far fa-user"></i>
+
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins agos</small>
+                </p>
+
+                <i class="far fa-user"></i>
+
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins agos</small>
+                </p>
+
+                <i class="far fa-user"></i>
+
+                <p class="card-text">
+                    <small class="text-muted">Last updated 3 mins agos</small>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+</div>
+
+
+                
+            </div>
+
+</body>
+
+<script>
+
+
+
+    document.getElementById('abc').addEventListener('click', function (e) {
+        let idColor = e.target.id;
+        let color;
+
+
+        if (idColor == 'color') {
+            color = "green";
+        }
+        else if (idColor == 'color1') {
+            color = "red";
+        }
+        else {
+            color = "yellow";
+        }
+
+
+        document.getElementById('border').style.borderLeft = "5px solid " + color;
+        document.getElementById('border-contenedor').style.border = "1px solid " + color
+        document.getElementById('border-contenedor1').style.border = "1px solid " + color
+        document.getElementById('border-contenedor2').style.border = "1px solid " + color
+        document.getElementsByClassName('border-cabecera').style.borderBottom = "1px solid " + color
+        document.getElementsByClassName('border-cabecera').style.color = color
+       
+        document.getElementById('border-contenedor3').style.borderTop = "1px solid " + color
+
+        document.getElementById('border-stats').style.border = "1px solid " + color
+
+
+
+
+        $(document).ready(function() {
+
+    var state = false;
+
+    //$("input:text:visible:first").focus();
+
+    $('#accesspanel').on('submit', function(e) {
+
+        e.preventDefault();
+
+        state = !state;
+
+        if (state) {
+            document.getElementById("litheader").className = "poweron";
+            document.getElementById("go").className = "";
+            document.getElementById("go").value = "Initializing...";
+        }else{
+            document.getElementById("litheader").className = "";
+            document.getElementById("go").className = "denied";
+            document.getElementById("go").value = "Access Denied";
+        }
+
+    });
+
+});
+    })
+
+</script>
+
+</html>

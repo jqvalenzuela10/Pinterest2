@@ -1,0 +1,54 @@
+<div class="grid-image">
+
+    <!--las publicaciones de las imagenes-->
+    <form action="/images" method="POST" enctype="multipart/form-data">
+        <div id="border-contenedor" class="card mb-3 " style="max-width: 40rem;">
+            <div  class="border-cabecera card-header bg-transparent ">Publicacion</div>
+            <div class="card-body text-info">
+                <!--seleccionar images-->
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Selecciona imagen</label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image" required>
+                </div>
+                <!--poner el titulo-->
+                <input name="title" id="border-contenedor1" style="margin-top:30px;" class="  form-control form-control-sm " type="text"
+                    placeholder="titulo">
+
+                <!--poner la descripcion-->
+                <input name="description" id="border-contenedor2" style="margin-top:30px;" class=" form-control form-control-sm " type="text"
+                    placeholder="descripcion">
+            </div>
+            <div id="border-contenedor3" class="card-footer bg-transparent ">
+                <button class="btn btn-success" type="submit">
+                    <i class="fa fa-upload"></i> Subir Imagen</button>
+            </div>
+    </form>
+    </div>
+
+    <!--la cuadricula de imagenes-->
+    <div class="container-image">
+        {{#each images}}
+
+        <div class="card" style="width: 100%">
+            <div style="width: 100%;height: 60%;">
+                <a href="/images/{{uniqueId}}">
+                    <img width="100%" height="100%" src="/public/upload/{{filename}}" alt="">
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{title}}</h5>
+                <p class="card-text">{{description}}.</p>
+
+            </div>
+        </div>
+
+
+        {{/each}}
+
+    </div>
+
+
+
+</div>
+</div>
+<!--los stack o publicaciones-->
